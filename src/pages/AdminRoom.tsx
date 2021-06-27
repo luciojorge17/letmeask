@@ -69,7 +69,7 @@ export function AdminRoom() {
                     {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
                 </div>
 
-                {questions.length == 0 && (
+                {questions.length === 0 && (
                     <div className="no-questions">
                         <img src={emptyQuestionsImg} alt="Esta sala ainda não possui perguntas" />
                         <h3>Não há perguntas</h3>
