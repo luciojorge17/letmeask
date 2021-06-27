@@ -133,3 +133,40 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    #page-auth {
+        flex-direction: column;
+
+        aside {
+            padding: 20px;
+            flex: 2;
+
+            img {
+                display: none;
+            }
+
+            strong {
+                font-size: 20px;
+                line-height: 1;
+            }
+
+            p {
+                font-size: 14px;
+                margin-top: 12px;
+                line-height: 1;
+            }
+        }
+
+        .main-content {
+            h2 {
+                margin: 32px 0 24px;
+            }
+        }
+
+        .create-room {
+            margin-top: 24px;
+        }
+
+    }
+}

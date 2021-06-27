@@ -1,10 +1,11 @@
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
 import logoImg from '../assets/images/logo.svg';
 import checkImg from '../assets/images/check.svg';
 import answerImg from '../assets/images/answer.svg';
 import deleteImg from '../assets/images/delete.svg';
+import emptyQuestionsImg from '../assets/images/empty-questions.svg';
 
 import '../styles/room.scss';
 // import { useAuth } from '../hooks/useAuth';
@@ -55,7 +56,7 @@ export function AdminRoom() {
         <div id="page-room">
             <header>
                 <div className="content">
-                    <img src={logoImg} alt="Letmeask" />
+                    <Link to="/"><img src={logoImg} alt="Letmeask" /></Link>
                     <div>
                         <RoomCode code={roomId} />
                         <Button isOutlined onClick={handleEndRoom}>Encerrar sala</Button>
@@ -67,6 +68,13 @@ export function AdminRoom() {
                     <h1>Sala {title}</h1>
                     {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
                 </div>
+
+                {questions.length == 0 && (
+                    <div className="no-questions">
+                        <img src={emptyQuestionsImg} alt="Esta sala ainda não possui perguntas" />
+                        <h3>Não há perguntas</h3>
+                    </div>
+                )}
 
                 <div className="question-list">
                     {questions.map(question => {
